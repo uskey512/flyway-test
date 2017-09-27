@@ -1,0 +1,7 @@
+server.port: 15000
+server.context-path: /api
+
+datasource:
+  testapi:
+    master:
+      driverClassName: com.mysql.jdbc.Driver
