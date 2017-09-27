@@ -1,0 +1,24 @@
+version: '3'
+services:
+  db:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: flyway
+      MYSQL_USER: user
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./db:/var/lib/mysql
+      - ./db/.setting:/etc/mysql/conf.d
+      - ./db/.setting:/docker-entrypoint-initdb.d
+  api:
+    build: ./test-api
+    ports:
+      - "8888:8080"
+    depends_on:
+      - db
+    volumes:
+        - ./test-api:/usr/src/app
+        - ./test-api/.gradlecache:/root/.gradle
