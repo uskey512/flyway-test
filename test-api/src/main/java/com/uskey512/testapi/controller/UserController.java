@@ -3,7 +3,7 @@ package com.uskey512.testapi.controller;
 import com.uskey512.testapi.dto.request.UserCreateDto;
 import com.uskey512.testapi.dto.response.UserDto;
 import com.uskey512.testapi.exception.NotFoundException;
-import com.uskey512.testapi.model.User;
+import com.uskey512.testapi.entity.User;
 import com.uskey512.testapi.repository.UserRepository;
 
 import java.util.HashMap;
@@ -11,20 +11,25 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.BeanUtils;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Created by uskey512 on 2017/10/01.
  */
+@Slf4j
 @RestController
 @RequestMapping("/users")
 public class UserController {
@@ -40,9 +45,10 @@ public class UserController {
         return userDto;
     }
 
-    @PostMapping(value = "/create")
-    public ResponseEntity<Void> create(UserCreateDto userCreateDto){
+    @PostMapping(value = "/create", consumes= MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Void> create(@RequestBody UserCreateDto userCreateDto){
         User user = new User();
+        log.error(userCreateDto.getName());
         user.setName(userCreateDto.getName());
         userRepository.save(user);
 

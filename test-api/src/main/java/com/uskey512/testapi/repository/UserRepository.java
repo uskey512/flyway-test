@@ -3,7 +3,7 @@ package com.uskey512.testapi.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.uskey512.testapi.model.User;
+import com.uskey512.testapi.entity.User;
 
 /**
  * Created by uskey512 on 2017/10/01.

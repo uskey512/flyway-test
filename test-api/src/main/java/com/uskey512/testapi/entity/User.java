@@ -1,4 +1,4 @@
-package com.uskey512.testapi.model;
+package com.uskey512.testapi.entity;
 
 import java.util.Date;
 
@@ -18,7 +18,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
