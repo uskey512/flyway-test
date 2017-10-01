@@ -1,6 +1,17 @@
-server.context-path: /api
+server:
+  context-path: /api
 
-datasource:
-  testapi:
-    master:
-      driverClassName: com.mysql.jdbc.Driver
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost/flyway
+    username: root
+    password: root
+    maxActive: 1
+    maxIdle: 1
+    minIdle: 1
+    initialSize: 1
+    testOnBorrow: true
+    testWhileIdle: true
+    timeBetweenEvictionRunsMillis: 600000
+    validationQuery: SELECT 1
