@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost/flyway
+    url: jdbc:mysql://db/flyway
     username: root
     password: root
     maxActive: 1
