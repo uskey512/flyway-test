@@ -43,20 +43,20 @@ test-apiの起動しているコンテナに入ります
 
 ## マイグレーションテスト  
 上記が完了した時点で `./gradlew flywayMigrate` をかけるとバージョンが1から3まで全てのマイグレーションが  
-実行されてしまいますが、実際にはスキーマだけ先に作成して適用は別のタイミングで実施したいなどのケースがままあります。  
+実行されますが、実際にはスキーマだけ先に作成して適用は別のタイミングで実施したいなどのケースがままあります。  
 
 GradleからflywayMigrateを実行する際に指定バージョンまでのマイグレーションを行う方法には２つあります。  
 
 + gradle flywayMigrateにパラメータを指定する方法  
 
-`./gradlew flywayMigrate -Pflyway.target=2`のような形でtargetを指定することができます。  
-指定したいのが上げたいバージョンまでであればこの方法で問題ありません。  
+`./gradlew flywayMigrate -Pflyway.target=2`のような形でtargetを指定することができます。  
+指定したいのが上げたいバージョンまでであればこの方法で問題ありません。
 
 + build.gradleにtargetを指定する方法  
 
 build.gradleのflywayのブロックにtargetを指定する方法でも実施が可能です。  
-他の設定項目を細かに行え、一度ファイルに記載するためオペミスが発生しにくいという利点があります。  
- `./gradlew flywayMigrate`を行うとbuild.gradleで指定したバージョンまでしかマイグレーションが実施されません。  
+他の設定項目を細かに行え、一度ファイルに記載するためオペミスが発生しにくいという利点があります。  
+`./gradlew flywayMigrate`を行うとbuild.gradleで指定したバージョンまでしかマイグレーションが実施されません。  
 
 ### 参考
 https://flywaydb.org/documentation/gradle/
