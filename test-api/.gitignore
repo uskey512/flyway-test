@@ -1,4 +1,7 @@
-.gradle
+.gradle/*
+.gradlecache/*
+!.gradlecache/
+!.gitkeep
 /build/
 !gradle/wrapper/gradle-wrapper.jar
 
