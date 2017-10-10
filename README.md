@@ -12,7 +12,8 @@ SpringBoot + MySQL + Docker　環境でGradleからflywayによるマイグレ�
 このリポジトリをチェックアウトしたディレクトリ以下で  
 `docker-compose up`  
 ※初回起動ではgradleのインストールが走るためかなり時間がかかります  
-api_1 | ~(中略)~ : Started Application in 13.72 seconds (JVM running for 14.701)  
+`api_1 | ~(中略)~ : Started Application in 13.72 seconds (JVM running for 14.701)`  
+↑こんな感じのログが出れば起動
 
 ## マイグレーションテスト準備  
 Gradleからflywayを実行する際にはflywayから始まる下記タスクを実行する必要があります  
