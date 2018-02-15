@@ -22,3 +22,8 @@ services:
     volumes:
         - ./test-api:/usr/src/app
         - ./test-api/.gradlecache:/root/.gradle
+  jenkins:
+    image: jenkins/jenkins
+    ports:
+      - "8889:8080"
+      - "50000:50000"

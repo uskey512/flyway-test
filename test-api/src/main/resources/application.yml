@@ -3,7 +3,6 @@ server:
 
 spring:
   datasource:
-    driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://db/flyway
     username: root
     password: root
