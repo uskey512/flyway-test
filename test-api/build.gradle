@@ -10,14 +10,15 @@ buildscript {
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-		classpath "org.flywaydb:flyway-gradle-plugin:3.0"
 	}
 }
 
 apply plugin: 'java'
-apply plugin: 'flyway'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+plugins {
+    id "org.flywaydb.flyway" version "5.0.7"
+}
 
 group = 'com.uskey512'
 version = '0.0.1-SNAPSHOT'
