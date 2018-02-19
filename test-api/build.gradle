@@ -47,10 +47,3 @@ dependencies {
 
 bootRun {
 }
-
-flyway {
-	user = 'root'
-	password = 'root'
-	url = 'jdbc:mysql://db/flyway'
-	target = '3'
-}
