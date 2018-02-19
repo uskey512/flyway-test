@@ -1,0 +1,1 @@
+ALTER TABLE `post` ADD `tag` VARCHAR(255) NULL AFTER `title`;
