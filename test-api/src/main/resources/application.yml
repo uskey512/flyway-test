@@ -14,3 +14,6 @@ spring:
     testWhileIdle: true
     timeBetweenEvictionRunsMillis: 600000
     validationQuery: SELECT 1
+
+flyway:
+    target: 3
