@@ -1,7 +1,3 @@
-plugins {
-    id "org.flywaydb.flyway" version "5.0.7"
-}
-
 buildscript {
 	ext {
 		springBootVersion = '2.0.0.BUILD-SNAPSHOT'
@@ -17,9 +13,12 @@ buildscript {
 	}
 }
 
-apply plugin: 'java'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
+plugins {
+    id "java"
+    id "org.flywaydb.flyway" version "5.0.7"
+	id "org.springframework.boot"
+	id "io.spring.dependency-management"
+}
 
 group = 'com.uskey512'
 version = '0.0.1-SNAPSHOT'
